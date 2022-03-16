@@ -9,7 +9,6 @@ do
             .AddChoices(new[] {
             "Avvia Partita", "Esci"
             }));
-
     if (scelta == "Avvia Partita")
     {
         int[,] valori = new int[3, 3]{
@@ -58,11 +57,6 @@ do
                     }
                 }
             }
-
-
-
-
-
             for (int i = 0; i < 3; i++)
             {
                 if (valori[i, 0] == 1 && valori[i, 1] == 1 && valori[i, 2] == 1)
@@ -103,7 +97,6 @@ do
                 payoff[1, 1] += 3;
                 payoff[2, 0] += 3;
             }
-
             for (int i = 0; i < 3; i++)
             {
                 //righe
@@ -134,13 +127,8 @@ do
                 {
                     payoff[0, i] = 100;
                 }
-
-
-
             }
-
             //diagonale sinistra
-
             if (valori[1, 1] == 0 && valori[2, 2] == 0)
             {
                 payoff[0, 0] = 100;
@@ -154,24 +142,19 @@ do
             {
                 payoff[2, 2] = 100;
             }
-
             //diagonale destra
-            
-            if (valori[0,2] == 0 && valori[1,1] == 0)
+            if (valori[0, 2] == 0 && valori[1, 1] == 0)
             {
-                payoff[2,0] = 100;
+                payoff[2, 0] = 100;
             }
-            if (valori[2,0] == 0 && valori[1,1] == 0)
+            if (valori[2, 0] == 0 && valori[1, 1] == 0)
             {
-                payoff[0,2] = 100;
+                payoff[0, 2] = 100;
             }
-
-            if (valori[2,0] == 0 && valori[0,2] == 0)
+            if (valori[2, 0] == 0 && valori[0, 2] == 0)
             {
-                payoff[1,1] = 100;
+                payoff[1, 1] = 100;
             }
-            
-
             for (int i = 0; i < k; i++)
             {
                 if (cont % 2 == 0)
@@ -224,9 +207,6 @@ do
                 }
             }
             flag = false;
-
-
-
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -238,9 +218,6 @@ do
             }
             Console.WriteLine("");
             Console.WriteLine("");
-
-
-
         }
         Console.ReadKey();
         Console.Clear();
