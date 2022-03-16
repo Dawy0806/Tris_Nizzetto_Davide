@@ -27,7 +27,7 @@ do
                                 {'N', 'N', 'N'},
                                 {'N', 'N', 'N'}
                             };
-        for (int cont = 0; cont < 9; cont++)
+        for (int cont = 0; cont < 10; cont++)
         {
             (int, int)[] salvavaloriperX = new (int, int)[5];
             (int, int)[] salvavaloriperO = new (int, int)[4];
@@ -106,17 +106,71 @@ do
 
             for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 3; j++)
+                //righe
+                if (valori[i, 0] == 0 && valori[i, 1] == 0)
                 {
-
+                    payoff[i, 2] = 100;
                 }
+                if (valori[i, 0] == 0 && valori[i, 2] == 0)
+                {
+                    payoff[i, 1] = 100;
+                }
+
+                if (valori[i, 1] == 0 && valori[i, 2] == 0)
+                {
+                    payoff[i, 0] = 100;
+                }
+                //colonne
+                if (valori[0, i] == 0 && valori[1, i] == 0)
+                {
+                    payoff[i, 2] = 100;
+                }
+                if (valori[0, 1] == 0 && valori[2, i] == 0)
+                {
+                    payoff[1, i] = 100;
+                }
+
+                if (valori[1, i] == 0 && valori[2, i] == 0)
+                {
+                    payoff[0, i] = 100;
+                }
+
+
+
             }
 
+            //diagonale sinistra
 
+            if (valori[1, 1] == 0 && valori[2, 2] == 0)
+            {
+                payoff[0, 0] = 100;
+            }
+            if (valori[0, 0] == 0 && valori[2, 2] == 0)
+            {
+                payoff[1, 1] = 100;
+            }
 
+            if (valori[0, 0] == 0 && valori[1, 1] == 0)
+            {
+                payoff[2, 2] = 100;
+            }
 
+            //diagonale destra
+            
+            if (valori[0,2] == 0 && valori[1,1] == 0)
+            {
+                payoff[2,0] = 100;
+            }
+            if (valori[2,0] == 0 && valori[1,1] == 0)
+            {
+                payoff[0,2] = 100;
+            }
 
-
+            if (valori[2,0] == 0 && valori[0,2] == 0)
+            {
+                payoff[1,1] = 100;
+            }
+            
 
             for (int i = 0; i < k; i++)
             {
