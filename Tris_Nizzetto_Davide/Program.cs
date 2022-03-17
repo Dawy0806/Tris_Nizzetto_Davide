@@ -116,7 +116,7 @@ do
                 //colonne
                 if (valori[0, i] == 0 && valori[1, i] == 0)
                 {
-                    payoff[i, 2] = 100;
+                    payoff[2,i] = 100;
                 }
                 if (valori[0, 1] == 0 && valori[2, i] == 0)
                 {
